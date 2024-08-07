@@ -1,0 +1,1 @@
+{"version":1,"defects":{"ComprobanteControllerTest::testFindOne":8,"ComprobanteControllerTest::testFindAll":8,"ComprobanteControllerTest::testCreate":8},"times":{"ComprobanteControllerTest::testFindOne":0.477,"ComprobanteControllerTest::testFindAll":0.002,"ComprobanteControllerTest::testCreate":0.002}}

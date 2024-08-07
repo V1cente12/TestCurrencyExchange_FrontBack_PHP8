@@ -1,0 +1,51 @@
+CREATE DATABASE test_9257381;
+USE test_9257381;
+
+CREATE TABLE clientes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+   nombre VARCHAR(20),
+   apellidos VARCHAR(30),
+   celular VARCHAR(20)
+);
+
+
+CREATE TABLE comprobantes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+   fecha TIMESTAMP,
+   id_remitente INT,
+   id_destinatario INT,
+   tipo_cambio NUMERIC(10, 2),
+   monto_mn NUMERIC(10, 2),
+   monto_me NUMERIC(10, 2),
+   estado VARCHAR(20),
+   removido_flag INT,
+   fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   FOREIGN KEY (id_remitente) REFERENCES clientes(id),
+   FOREIGN KEY (id_destinatario) REFERENCES clientes(id)
+);
+
+
+INSERT INTO clientes (nombre, apellidos, celular) VALUES
+    ('Jose', 'Perez', '12345678'),
+    ('Maria', 'Gomez', '22345678'),
+    ('Luis', 'Lopez', '32345678'),
+    ('Juan', 'Gonzalez', '42345678'),
+    ('Edwin', 'Rodriguez', '52345678'),
+    ('Laura', 'Sanchez', '62345678'),
+    ('Ana', 'Torres', '72345678'),
+    ('Manuel', 'Ramirez', '82345678'),
+    ('Pedro', 'Garcia', '92345678'),
+     ('Isabel', 'Fernandez', '02345678')
+    ;
+
+
+
+CREATE USER 'usr_gambarte'@'localhost' IDENTIFIED BY 'abc123';
+GRANT SELECT, INSERT, UPDATE, DELETE ON test_9257381.clientes TO 'usr_gambarte'@'localhost';
+GRANT SELECT, INSERT, UPDATE, DELETE ON test_9257381.comprobantes TO 'usr_gambarte'@'localhost';
+FLUSH PRIVILEGES;
+
+
+
+ v
