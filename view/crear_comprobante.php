@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <select id="remitente" name="remitente" class="form-control">
                     <?php
                     try {
-                        $dbh = new PDO('mysql:host=localhost;dbname=test_9257381', 'usr_gambarte', 'abc123');
+                        $dbh = new PDO('mysql:host=localhost;dbname=test_9257381', 'root', '');
                         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                         $stmt = $dbh->prepare('SELECT id, nombre FROM clientes');
                         $stmt->execute();
@@ -95,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <select id="destinatario" name="destinatario" class="form-control">
                     <?php
                     try {
-                        $dbh = new PDO('mysql:host=localhost;dbname=test_9257381', 'usr_gambarte', 'abc123');
+                        $dbh = new PDO('mysql:host=localhost;dbname=test_9257381', 'root', '');
                         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                         $stmt = $dbh->prepare('SELECT id, nombre FROM clientes');
                         $stmt->execute();
