@@ -2,11 +2,13 @@
 use model\Comprobante;
 class ComprobanteController {
     private $comprobante;
-
+    
+    //constructor
     public function __construct($db) {
         $this->comprobante = new Comprobante($db);
     }
 
+    //buscar por id
     public function findOne($id) {
         $comprobante = $this->comprobante->findOne($id);
         if ($comprobante) {
@@ -15,6 +17,8 @@ class ComprobanteController {
             echo json_encode(array("message" => "Comprobante no encontrado."));
         }
     }
+    
+    //obtener todos los registros
     public function getTotalRegistros() {
         
         $comprobantes = $this->comprobante->getTotalRegistros();
