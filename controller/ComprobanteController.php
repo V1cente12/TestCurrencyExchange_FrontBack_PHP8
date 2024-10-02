@@ -49,6 +49,7 @@ class ComprobanteController {
             echo json_encode(array("message" => "No se encontraron comprobantes."));
         }
     }
+    //crear comprobante
     public function createComprobante() {
        
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -69,7 +70,7 @@ class ComprobanteController {
             }
         }
     }
-
+    // crear
     public function create($datos) {
         if ($this->createComprobante($datos)) {
             echo json_encode(array("message" => "Comprobante creado exitosamente."));
@@ -78,7 +79,7 @@ class ComprobanteController {
         }
     }
     
-
+//actualizar comprobante
     public function update($id, $nuevosDatos) {
         if ($this->comprobante->update($id, $nuevosDatos)) {
             header("Location: Comprobanteview.php");
@@ -87,7 +88,7 @@ class ComprobanteController {
             echo json_encode(array("message" => "Error al actualizar el comprobante."));
         }
     }
-
+    //eliminar comprobante
     public function delete($id) {
         if ($this->comprobante->delete($id)) {
             header("Location: Comprobanteview.php");
@@ -96,6 +97,7 @@ class ComprobanteController {
             echo json_encode(array("message" => "Error al eliminar el comprobante."));
         }
     }
+    //obtener nombre y apeliido de cliente
     public function getClienteNombreApellido($clienteId) {
        
         if (!is_numeric($clienteId) || $clienteId <= 0) {
