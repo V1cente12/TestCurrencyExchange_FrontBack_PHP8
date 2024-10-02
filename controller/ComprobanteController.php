@@ -28,6 +28,7 @@ class ComprobanteController {
             echo json_encode(array("message" => "No se encontraron comprobantes."));
         }
     }
+    //obtener clientes
     public function getClients() {
         
         $clients = $this->comprobante->getClients();
@@ -37,6 +38,8 @@ class ComprobanteController {
             echo json_encode(array("message" => "No se encontraron comprobantes."));
         }
     }
+    
+    //buscar por pagina
     public function findAll($pagina) {
         
         $comprobantes = $this->comprobante->findAll($pagina);
